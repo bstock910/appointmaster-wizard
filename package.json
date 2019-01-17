@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "bulma": "^0.7.2",
+    "moment": "^2.23.0",
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
+    "vuelidate": "^0.7.4",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -52,5 +54,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "parser": "vue"
+  }
 }

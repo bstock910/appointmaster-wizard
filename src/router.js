@@ -1,23 +1,57 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import PageHome from '@/pages/PageHome'
+import PageNotFound from '@/pages/PageNotFound'
 
 Vue.use(Router)
 
-export default new Router({
+function loadPage (page) {
+  return () => import(/* webpackChunkName: "page-[request]" */ `@/pages/Page${page}Setup.vue`)
+}
+
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: PageHome
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/account',
+      name: 'account',
+      component: loadPage('Account')
+    },
+    {
+      path: '/appointment',
+      name: 'appointment',
+      component: loadPage('AppointmentReminder')
+    },
+    {
+      path: '/recall',
+      name: 'recall',
+      component: loadPage('Recall')
+    },
+    {
+      path: '/reactivation',
+      name: 'reactivation',
+      component: loadPage('Reactivation')
+    },
+    {
+      path: '/scheduling',
+      name: 'scheduling',
+      component: loadPage('Scheduling')
+    },
+    {
+      path: '/survey',
+      name: 'survey',
+      component: loadPage('Survey')
+    },
+    {
+      path: '*',
+      name: 'notFound',
+      component: PageNotFound
     }
-  ]
+  ],
+  mode: 'history'
 })
+export default router
