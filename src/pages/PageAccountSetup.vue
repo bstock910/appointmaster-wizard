@@ -38,6 +38,7 @@
 import AccountHome from '@/components/account/AccountHome'
 import AccountSettings from '@/components/account/AccountSettings'
 import AccountSocial from '@/components/account/AccountSocial'
+import AccountUser from '@/components/account/AccountUser'
 import AccountSummary from '@/components/account/AccountSummary'
 
 export default {
@@ -45,6 +46,7 @@ export default {
     AccountHome,
     AccountSettings,
     AccountSocial,
+    AccountUser,
     AccountSummary
   },
   data () {
@@ -56,12 +58,14 @@ export default {
         'AccountHome',
         'AccountSettings',
         'AccountSocial',
+        'AccountUser',
         'AccountSummary'
       ],
       titles: [
         'Getting Started',
         'Account Settings',
         'Social Media',
+        'User Setup',
         'Summary'
       ]
     }
