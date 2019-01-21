@@ -2,6 +2,7 @@
     <div class="column is-8 is-offset-2">
       <form>
         <h5 class="subtitle is-5 has-text-centered">Office Manager</h5>
+        p
         <div class="field is-horizontal">
           <div class="field-label is-normal">
             <label for="managerName" class="label">Name</label>
